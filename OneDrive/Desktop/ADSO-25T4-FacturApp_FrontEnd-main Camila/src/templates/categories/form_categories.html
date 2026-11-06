@@ -1,0 +1,73 @@
+
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow-sm border-0">
+        <div class="card-header bg-primary text-white py-3">
+          <h4 class="card-title mb-0">
+            <i class="bi bi-folder-plus me-2"></i>Register a new category</h4>
+        </div>
+        <div class="card-body p-4">
+          <form action="/form_categories" method="POST">
+            
+            <div class="mb-3">
+              <label for="nombre_categoria" class="form-label fw-semibold">Names of the categories</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="nombre_categoria" 
+                name="nombre_categoria" 
+                placeholder="Ej. Drinks, Dairy products, Groceries" 
+                required
+              >
+            </div>
+
+            
+            <div class="mb-3">
+              <label for="codigo_categoria" class="form-label fw-semibold">code/identification</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="code_categorie" 
+                name="code_categorie" 
+                placeholder="Ej. CAT-001" 
+                required
+              >
+            </div>
+
+            <!-- Descripción -->
+            <div class="mb-3">
+              <label for="descripcion_categoria" class="form-label fw-semibold">Description</label>
+              <textarea 
+                class="form-control" 
+                id="descripction_categorie" 
+                name="description_categorie" 
+                rows="3" 
+                placeholder="A brief overview of the products in this group..."
+              ></textarea>
+            </div>
+
+         
+            <div class="mb-4">
+              <label class="form-label fw-semibold d-block">Status</label>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="estado" name="estado" checked>
+                <label class="form-check-label" for="estado">Asset held for sale</label>
+              </div>
+            </div>
+
+           
+            <div class="d-flex justify-content-end gap-2">
+              <a href="/list_categories" class="btn btn-outline-secondary">Cancel</a>
+              <button type="submit" class="btn btn-primary px-4">Save category</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

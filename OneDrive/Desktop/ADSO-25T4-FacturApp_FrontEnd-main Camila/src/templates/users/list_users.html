@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container mt-4">
+  <div class="card shadow-sm border-0">
+    <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
+      <h4 class="card-title mb-0 text-dark fw-bold">
+        <i class="bi bi-people me-2"></i>User management
+      </h4>
+      <a href="/form_users" class="btn btn-dark btn-sm">
+        + New user
+      </a>
+    </div>
+
+    <div class="card-body">
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <input type="text" class="form-control form-control-sm" placeholder="Search by user or email address...">
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-hover table-bordered align-middle">
+          <thead class="table-light">
+            <tr>
+              <th scope="col" style="width: 70px;">Id</th>
+              <th scope="col">Name</th>
+              <th scope="col">User</th>
+              <th scope="col">Email</th>
+              <th scope="col" style="width: 140px;">Role</th>
+              <th scope="col" style="width: 100px;">Status</th>
+              <th scope="col" class="text-center" style="width: 140px;">Shares</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="fw-bold">1</span></td>
+              <td>Senior administrator</td>
+              <td>admin</td>
+              <td>admin@facturapp.com</td>
+              <td><span class="badge bg-primary">Administrator</span></td>
+              <td><span class="badge bg-success">Asset</span></td>
+              <td class="text-center">
+                <button class="btn btn-sm btn-outline-warning me-1">Edit</button>
+                <button class="btn btn-sm btn-outline-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="fw-bold">2</span></td>
+              <td>Juan Gomez</td>
+              <td>jgomez123</td>
+              <td>juan@facturapp.com</td>
+              <td><span class="badge bg-info text-dark">Operations worker</span></td>
+              <td><span class="badge bg-success">Asset</span></td>
+              <td class="text-center">
+                <button class="btn btn-sm btn-outline-warning me-1">Edit</button>
+                <button class="btn btn-sm btn-outline-danger">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center mt-3">
+        <small class="text-muted">Showing 2 registered users</small>
+        <ul class="pagination pagination-sm mb-0">
+          <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">Netx</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

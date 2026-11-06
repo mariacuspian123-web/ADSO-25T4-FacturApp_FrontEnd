@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container mt-4">
+  <div class="card shadow-sm border-0">
+    <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
+      <h4 class="card-title mb-0 text-primary fw-bold">
+        <i class="bi bi-box me-2"></i>Product catalogue
+      </h4>
+      <a href="/form_products" class="btn btn-primary btn-sm">
+        + New product
+      </a>
+    </div>
+
+    <div class="card-body">
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <input type="text" class="form-control form-control-sm" placeholder="Search by name or code...">
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-hover table-bordered align-middle">
+          <thead class="table-light">
+            <tr>
+              <th scope="col" style="width: 100px;">Code</th>
+              <th scope="col">Product</th>
+              <th scope="col">Category</th>
+              <th scope="col" class="text-end">Selling price</th>
+              <th scope="col" class="text-center" style="width: 90px;">Stock</th>
+              <th scope="col" style="width: 110px;">Status</th>
+              <th scope="col" class="text-center" style="width: 140px;">Shares</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="fw-bold">PROD-001</span></td>
+              <td>Apple fizzy drink 1.5L</td>
+              <td>Drinks</td>
+              <td class="text-end">$4,200</td>
+              <td class="text-center"><span class="badge bg-primary">45</span></td>
+              <td><span class="badge bg-success">Available</span></td>
+              <td class="text-center">
+                <button class="btn btn-sm btn-outline-warning me-1">Edit</button>
+                <button class="btn btn-sm btn-outline-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="fw-bold">PROD-002</span></td>
+              <td>Whole milk 1000ml</td>
+              <td>Dairy products</td>
+              <td class="text-end">$3,800</td>
+              <td class="text-center"><span class="badge bg-danger">four</span></td>
+              <td><span class="badge bg-warning text-dark">Low Stock</span></td>
+              <td class="text-center">
+                <button class="btn btn-sm btn-outline-warning me-1">Edit</button>
+                <button class="btn btn-sm btn-outline-danger">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center mt-3">
+        <small class="text-muted">Showing 2 registered products</small>
+        <ul class="pagination pagination-sm mb-0">
+          <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

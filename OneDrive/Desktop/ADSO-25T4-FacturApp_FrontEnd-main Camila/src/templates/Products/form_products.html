@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-7">
+      <div class="card shadow-sm border-0">
+        <div class="card-header bg-primary text-white py-3">
+          <h4 class="card-title mb-0">
+            <i class="bi bi-box-seam me-2"></i>Register a new product
+          </h4>
+        </div>
+        <div class="card-body p-4">
+          <form action="/form_products" method="POST">
+            <div class="row g-3">
+              <!-- Código de barra / SKU -->
+              <div class="col-md-6">
+                <label for="codigo_producto" class="form-label fw-semibold">Code</label>
+                <input type="text" class="form-control" id="codigo_producto" name="codigo_producto" placeholder="Ej. PROD-001" required>
+              </div>
+
+              <!-- Categoría -->
+              <div class="col-md-6">
+                <label for="categoria_id" class="form-label fw-semibold">Categories</label>
+                <select class="form-select" id="categoria_id" name="categoria_id" required>
+                  <option value="" selected disabled>Select a category</option>
+                  <option value="1">Drinks</option>
+                  <option value="2">Dairy products</option>
+                  <option value="3">Grocery shops</option>
+                </select>
+              </div>
+
+              <!-- Nombre del producto -->
+              <div class="col-12">
+                <label for="nombre_producto" class="form-label fw-semibold">Product name</label>
+                <input type="text" class="form-control" id="nombre_producto" name="nombre_producto" placeholder="Ej. Postobón Apple Fizzy Drink 1.5L" required>
+              </div>
+
+              <!-- Precio de costo -->
+              <div class="col-md-4">
+                <label for="precio_costo" class="form-label fw-semibold">Price cost($)</label>
+                <input type="number" step="0.01" class="form-control" id="precio_costo" name="precio_costo" placeholder="0.00" required>
+              </div>
+
+              <!-- Precio de venta -->
+              <div class="col-md-4">
+                <label for="precio_venta" class="form-label fw-semibold">Selling price ($)</label>
+                <input type="number" step="0.01" class="form-control" id="precio_venta" name="precio_venta" placeholder="0.00" required>
+              </div>
+
+              <!-- Stock inicial -->
+              <div class="col-md-4">
+                <label for="stock" class="form-label fw-semibold">Opening stock</label>
+                <input type="number" class="form-control" id="stock" name="stock" placeholder="0" required>
+              </div>
+
+              <!-- Descripción -->
+              <div class="col-12">
+                <label for="descripcion_producto" class="form-label fw-semibold">Description</label>
+                <textarea class="form-control" id="descripcion_producto" name="descripcion_producto" rows="2" placeholder="Technical details or product presentation..."></textarea>
+              </div>
+            </div>
+
+            <!-- Botones -->
+            <div class="d-flex justify-content-end gap-2 mt-4">
+              <a href="/list_products" class="btn btn-outline-secondary">Cancel</a>
+              <button type="submit" class="btn btn-primary px-4">Save product</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

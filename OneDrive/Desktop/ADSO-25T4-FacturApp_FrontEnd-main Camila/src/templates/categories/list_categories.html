@@ -1,0 +1,88 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container mt-4">
+  <div class="card shadow-sm border-0">
+    <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
+      <h4 class="card-title mb-0 text-primary fw-bold">
+        <i class="bi bi-tags me-2"></i>List of categories
+      </h4>
+      <a href="/form_categories" class="btn btn-primary btn-sm">
+        + New category
+      </a>  
+    </div>
+
+    <div class="card-body">
+      
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <input type="text" class="form-control form-control-sm" placeholder="Search by category...">
+        </div>
+      </div>
+<!-- Tabla responsiva -->
+      <div class="table-responsive">
+        <table class="table table-hover table-bordered align-middle">
+          <thead class="table-light">
+            <tr>
+              <th scope="col" style="width: 80px;">Code</th>
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
+              <th scope="col" style="width: 100px;">Status</th>
+              <th scope="col" class="text-center" style="width: 140px;">Shares</th>
+            </tr>
+          </thead>
+          <tbody>
+          <!-- Fila de ejemplo 1 -->
+            <tr>
+              <td><span class="fw-bold">CAT-001</span></td>
+              <td>Drinks</td>
+              <td>Soft drinks, fresh juices, bottled water and hydrating drinks</td>
+              <td><span class="badge bg-success">asset</span></td>
+              <td class="text-center">
+                <button class="btn btn-sm btn-outline-warning me-1" title="Editar">Edit</button>
+                <button class="btn btn-sm btn-outline-danger" title="Eliminar">Delete</button>
+              </td>
+            </tr>
+
+            <!-- Fila de ejemplo 2 -->
+            <tr>
+              <td><span class="fw-bold">CAT-002</span></td>
+              <td>Dairy products</td>
+              <td>Whole milk, cheese, yoghurt and pasteurised dairy products</td>
+              <td><span class="badge bg-success">asset</span></td>
+              <td class="text-center">
+                <button class="btn btn-sm btn-outline-warning me-1" title="Editar">Edit</button>
+                <button class="btn btn-sm btn-outline-danger" title="Eliminar">Delete</button>
+              </td>
+            </tr>
+
+            <!-- Fila de ejemplo 3 -->
+            <tr>
+              <td><span class="fw-bold">CAT-003</span></td>
+              <td>Grocery shops</td>
+              <td>Cereals, rice, tinned food and non-perishable dry goods</td>
+              <td><span class="badge bg-secondary">Inactive</span></td>
+              <td class="text-center">
+                <button class="btn btn-sm btn-outline-warning me-1" title="Editar">Edit</button>
+                <button class="btn btn-sm btn-outline-danger" title="Eliminar">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+     <!-- Paginación informativa -->
+      <div class="d-flex justify-content-between align-items-center mt-3">
+        <small class="text-muted">Showing three registered categories</small>
+        <ul class="pagination pagination-sm mb-0">
+          <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
